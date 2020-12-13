@@ -43,3 +43,8 @@ a {
     cursor:pointer;
     background-color: darkgray
 }
+
+h1 {
+    margin-left: 10px;
+    font-size: 30px;
+}

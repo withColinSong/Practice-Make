@@ -22,7 +22,7 @@
             </div>
 
             <div class="frm-align">
-                <label for="frm-io">연락처</label>
+                <label for="frm-io">비밀번호</label>
                 <input type="password" id="frm-io" name="password">
             </div>
             <div class="frm-align">
