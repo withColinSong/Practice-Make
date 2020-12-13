@@ -18,7 +18,7 @@
         <form action="form.jsp" method="post" id="header-frm">
             <div class="frm-align">
                 <label for="frm-io">이름</label>
-                <input type="text" id="frm-io" name="userid">
+                <input type="text" id="frm-io" name="userId">
             </div>
 
             <div class="frm-align">
