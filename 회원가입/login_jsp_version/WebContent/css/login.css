@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.header {
+    font-size: 30px;
+}
+
+.content {
+    width: 1000px;
+    margin-left: 30px;
+}
+
+.header-content {
+    margin-bottom: 30px;
+}
+
+.header-content > h1 {
+    margin: 10px 0px 10px 0px;
+}
+
+
+label {
+    display: inline-block;
+    width:50px;
+}
+
+#submit {
+    width: 190px;
+}
+
+.frm-align {
+    margin-bottom: 10px;
+}
