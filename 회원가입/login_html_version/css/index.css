@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+ul {
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header-align {
+    background-color: rgb(8, 12, 12);
+    
+}
+
+.header-list {
+    font-size: 30px;
+    margin-left: 30px;
+    display: flex;
+}
+
+.header-list > a {
+    height: 50px;
+    text-align: center;
+    margin-left: 20px;
+    line-height: 50px;
+}
+
+
+.header-list li:hover {
+    text-align: center;
+    cursor:pointer;
+    background-color: darkgray
+}
+
+h1 {
+    font-size: 30px;
+}
