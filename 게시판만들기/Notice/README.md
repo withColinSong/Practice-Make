@@ -1,4 +1,15 @@
+# [목차](#목차)
+- [목차](#목차)
+- [1. 게시판 목록 만들기](#1-게시판-목록-만들기)
+	- [1. View - JSP](#1-view---jsp)
+	- [2. Controll - Servlet](#2-controll---servlet)
+	- [3. MODEL](#3-model)
+	- [1.1 View : JSP](#11-view--jsp)
+	- [추가 해야 할 항목](#추가-해야-할-항목)
+
 # 1. 게시판 목록 만들기
+🎈 `JSP, Servlet`
+
 ![](https://images.velog.io/images/withcolinsong/post/083d4763-1959-4a50-b638-1261593cb8ff/image.png)
 
 ![](https://images.velog.io/images/withcolinsong/post/79323530-691d-440b-9eb7-ca065af9f3d3/image.png)
