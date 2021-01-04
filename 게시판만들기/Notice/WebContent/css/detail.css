@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+
+.notice-table {
+	width: 1000px;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+	height: 400px;
+	padding: 30px;
+
+}
+
+.table-title {
+	height: 30px;
+	border: 1px solid black;
+	
+}
+
+th, td {
+	border: 1px solid black;
+}
+
+.table-content > td {
+	height: 200px;
+	border: 1px solid black;
+	width: 800px;
+}
+
+.table-css {
+	height: 30px;
+}
+
+.list {
+	margin: 30px auto;
+}
+
+.list > input {
+	width: 100px;
+	height: 50px;
+}

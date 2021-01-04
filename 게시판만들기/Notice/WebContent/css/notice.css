@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.notice-table {
+	border-top: 1px solid black;
+	margin: 30px auto;
+	width: 1000px;
+	border-collapse: collapse;
+}
+
+th, tr {
+	text-align: center;
+	border-bottom: 1px solid black;
+	width: 100px;
+}
+
+.table-header {
+	height: 50px;
+}
+
+
+.container > h1 {
+	text-align:center;
+}
+
+.pager {
+	margin: auto;
+	text-align:center;
+}
+
+a {
+	text-decoration:none;
+	color: black;	
+}
+
+.no-title > a:hover {
+	color:red;
+}

@@ -2,35 +2,14 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
-<style>
-
-.notice-table {
-	border-top: 1px solid black;
-	margin: 30px auto;
-	width: 1000px;
-	border-collapse: collapse;
-}
-
-th, tr {
-	text-align: center;
-	border-bottom: 1px solid black;
-	width: 100px;
-}
-
-.table-header {
-	height: 50px;
-}
-
-
-.container > h1 {
-	text-align:center;
-}
-</style>
+<link rel="stylesheet" href="../css/notice.css"/>
 </head>
 <body>
 	<div class="container">
@@ -45,23 +24,37 @@ th, tr {
 				<th>파일업로드</th>
 			</tr>
 			
-			<%
+			  
+			<%-- 
 				List<NoticeVo> list = (List<NoticeVo>)request.getAttribute("notice");
 			
 			for(NoticeVo n : list)	{
 				pageContext.setAttribute("notice", n);
 				
 			%>
-			<tr>
-				<td>${notice.id}</td>
-				<td>${notice.title }</td>
-				<td>${notice.writer_id}</td>
-				<td>${notice.regdate}</td>
-				<td>${notice.hit}</td>
-				<td>${notice.files}</td>
-			</tr>
-			<% } %>
+			--%>
+			
+			<c:forEach var="no" items="${notice }">
+				<tr>
+					<td>${no.id}</td>
+					<td class="no-title"><a href="detail?id=${no.id }">${no.title }</a></td>
+					<td>${no.writer_id}</td>
+					<td>${no.regdate}</td>
+					<td>${no.hit}</td>
+					<td>${no.files}</td>
+				</tr>
+			</c:forEach>
+			<%--  <% } %> --%>
+			
+			
 		</table>
+		<div class="pager">
+			<input type="button" name="pager-btn" value="<">
+			<c:forEach var="i" begin="0" end="4">
+			<span><a href="">${i+1 }</a></span>
+			</c:forEach>
+			<input type="button" name="pager-btn" value=">">
+		</div>
 	</div>
 </body>
 </html>
