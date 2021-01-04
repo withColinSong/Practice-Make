@@ -57,9 +57,9 @@ public class Controller extends HttpServlet {
 				list.add(vo);	
 			}
 			
-			System.out.println(list);
+			
 			request.setAttribute("notice", list);
-			request.getRequestDispatcher("/notice/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/view/notice/index.jsp").forward(request, response);
 			
 		} catch (ClassNotFoundException e) {
 			System.out.println("ClassNotFoundException");
