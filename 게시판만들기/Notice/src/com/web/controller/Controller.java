@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.web.Application.Application;
 import com.web.NoticeVo.NoticeVo;
 
 @WebServlet("/notice/index")
@@ -22,27 +23,23 @@ public class Controller extends HttpServlet {
 	public static String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:XE";
 	public static String JDBC_USER = "song";
 	public static String JDBC_PW = "1234";
-	Connection conn;
-	PreparedStatement ps;
-	ResultSet rs;
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		response.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=utf-8");
-		request.setCharacterEncoding("UTF-8");
-
-		
-		String sql = "SELECT * FROM NOTICE";
-		List<NoticeVo> list = new ArrayList<>();
-		
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 		
 		try {
-		
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PW); 
-			 ps = conn.prepareStatement(sql);
-			 rs = ps.executeQuery();
+			
+			Connection conn = new Application().getConn();
+			response.setCharacterEncoding("UTF-8");
+			response.setContentType("text/html; charset=utf-8");
+			request.setCharacterEncoding("UTF-8");
+			
+			String sql = "SELECT * FROM NOTICE";
+			List<NoticeVo> list = new ArrayList<>();
+
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				
@@ -61,26 +58,14 @@ public class Controller extends HttpServlet {
 			request.setAttribute("notice", list);
 			request.getRequestDispatcher("/WEB-INF/view/notice/index.jsp").forward(request, response);
 			
-		} catch (ClassNotFoundException e) {
-			System.out.println("ClassNotFoundException");
-			e.printStackTrace();
-		} catch (SQLException e) {
+			rs.close();
+			ps.close();
+			conn.close();
+		} catch (Exception e) {
 			System.out.println("sql 오류");
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} finally {
-			try {
-				rs.close();
-				ps.close();
-				conn.close();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-		}
-		
-		
+		} 
 	}
 
 }
